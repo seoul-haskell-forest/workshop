@@ -4,4 +4,5 @@ module Lib
 where
 
 someFunc :: IO ()
-someFunc = print "hello"
+someFunc = do
+  print "Hello, World!"

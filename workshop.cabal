@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Example
       Lib
   other-modules:
       Paths_workshop
@@ -35,6 +36,10 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , monad-logger
+    , mtl
+    , text
+    , transformers
   default-language: Haskell2010
 
 executable workshop-exe
@@ -48,6 +53,10 @@ executable workshop-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , monad-logger
+    , mtl
+    , text
+    , transformers
     , workshop
   default-language: Haskell2010
 
@@ -63,5 +72,9 @@ test-suite workshop-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , monad-logger
+    , mtl
+    , text
+    , transformers
     , workshop
   default-language: Haskell2010
