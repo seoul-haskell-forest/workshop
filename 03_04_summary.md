@@ -29,12 +29,28 @@ class Functor f where
 * 어떤 함수와 펑터 타입을 받아 함수를 적용한다.
 * `fmap`보다 중위 함수인 `(<$>)`를 더 많이 쓴다.
 
+```haskell
+-- >>> inc <$> (Just 1)
+-- Just 2
+
+-- >>> inc <$> [1, 2, 3]
+-- [2,3,4]
+```
+
 ### Monad
 
 ```haskell
 class Applicative m => Monad m where
   (>>=) :: m a -> (a -> m b) -> m b
   return :: a -> m a
+```
+
+```haskell
+-- >>> Just 1 >>= (\x -> Just (inc x))
+-- Just 2
+
+-- >>> Just 1 >>= (\x -> return (inc x))
+-- Just 2
 ```
 
 * 모나드 값과 함수를 받아 함수를 적용한 모나드 값을 리턴한다. 인자 함수는 모나드 값을 리턴해야 한다.
@@ -48,6 +64,15 @@ class Applicative m => Monad m where
     심볼 <- 모나드 값
     모나드 값
   ```
+
+```haskell
+getAgeByPhone :: String -> Maybe Int
+getAgeByPhone phone = do
+  name <- lookup phone phones
+  id <- lookup name ids
+  age <- lookup id ages
+  return age
+```
 
 ## Type
 
