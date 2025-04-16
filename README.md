@@ -17,9 +17,10 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 $ ghcup tui
 ```
 
-여기서 `GHCup`, `Stack`, `HLS`, `cabal`, `GHC`를 설치하고 버전 관리할 수 있습니다. 모두 `recommended`가 표시되어 
-있는 버전을 설치하면 됩니다. 위, 아래 키로 원하는 버전에 위치시키고 `i`를 눌러 설치합니다. 여러 버전을 설치할 수 있기 때문에 
-특정 버전을 사용하려면 커서를 위치시키고 `s`를 누르면 됩니다. 종료하려면 `q`를 누르면 됩니다.
+여기서 `GHCup`, `Stack`, `HLS`, `cabal`, `GHC`를 설치하고 버전 관리할 수 있습니다. `GHC`를 빼고 `recommended`가 
+표시된 있는 버전을 설치하면 됩니다. 위, 아래 키로 원하는 버전에 위치시키고 `i`를 눌러 설치합니다. 여러 버전을 설치할 수 있기 때문에 
+특정 버전을 사용하려면 커서를 위치시키고 `s`를 누르면 됩니다. 종료하려면 `q`를 누르면 됩니다. `GHC`는 `9.8.4` 버전을 
+설치해주시면 예제를 따라하는데 문제가 없을 것입니다.
 
 * Stack: 하스켈 프로젝트 관리도구
 * HLS: 편집기를 위한 하스켈 언어 서버
@@ -58,7 +59,7 @@ VSCode 하스켈 확장은 기본 값으로 최신 HLS를 다운로드 합니다
 터미널에서 다음 명령어로 `hello` 프로젝트를 만들고 실행을 합니다.
 
 ```sh
-$ stack --resolver lts-21.25 new hello simple
+$ stack --resolver lts-23.18 new hello simple
 ...
 ... 어쩌고저쩌고
 ...
