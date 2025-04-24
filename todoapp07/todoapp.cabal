@@ -28,6 +28,8 @@ library
       Domain.Todo.Task
       Domain.Todo.TaskRepo
       Domain.Todo.UseCase
+      Infra.PgDatabase.Connection
+      Infra.PgDatabase.Task
       Lib
   other-modules:
       Paths_todoapp
