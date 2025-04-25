@@ -46,19 +46,24 @@ library
       NoImplicitPrelude
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-orphans
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , errors
     , generic-lens
+    , http-types
     , lens
     , mtl
     , postgresql-simple
     , relude
     , resource-pool
+    , scotty
     , stm
     , text
     , time
     , transformers
     , ulid
+    , unliftio
+    , wai
   default-language: Haskell2010
 
 executable todoapp-exe
@@ -78,20 +83,25 @@ executable todoapp-exe
       NoImplicitPrelude
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-orphans -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , errors
     , generic-lens
+    , http-types
     , lens
     , mtl
     , postgresql-simple
     , relude
     , resource-pool
+    , scotty
     , stm
     , text
     , time
     , todoapp
     , transformers
     , ulid
+    , unliftio
+    , wai
   default-language: Haskell2010
 
 test-suite todoapp-test
@@ -112,18 +122,23 @@ test-suite todoapp-test
       NoImplicitPrelude
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wno-orphans -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , errors
     , generic-lens
+    , http-types
     , lens
     , mtl
     , postgresql-simple
     , relude
     , resource-pool
+    , scotty
     , stm
     , text
     , time
     , todoapp
     , transformers
     , ulid
+    , unliftio
+    , wai
   default-language: Haskell2010

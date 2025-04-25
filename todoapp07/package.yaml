@@ -33,6 +33,11 @@ dependencies:
 - postgresql-simple
 - resource-pool
 - relude
+- aeson
+- wai
+- http-types
+- unliftio
+- scotty
 
 default-extensions:
 - OverloadedStrings
