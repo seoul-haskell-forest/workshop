@@ -1,0 +1,85 @@
+name:                todoapp
+version:             0.1.0.0
+github:              "githubuser/todoapp"
+license:             BSD-3-Clause
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2025 Author name here"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/todoapp#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- mtl
+- transformers
+- time
+- text
+- ulid
+- generic-lens
+- lens
+- errors
+- stm
+- postgresql-simple
+- resource-pool
+- relude
+- aeson
+- wai
+- http-types
+- unliftio
+- scotty
+
+default-extensions:
+- OverloadedStrings
+- DuplicateRecordFields
+- OverloadedRecordDot
+- DeriveGeneric
+- OverloadedLabels
+- NoImplicitPrelude
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+- -Wno-orphans
+
+library:
+  source-dirs: src
+
+executables:
+  todoapp-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - todoapp
+
+tests:
+  todoapp-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - todoapp
